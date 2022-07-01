@@ -1,0 +1,83 @@
+.home-container{
+    display: flex;
+}
+  
+.leftDiv{
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+}
+
+header{
+  background-color: #7025FB;
+  height: 84px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  padding-left: 60px;
+}
+
+header h1{
+  color: white;
+}
+
+.img-container{
+  background-color: white;
+  height: inherit;
+  background-image: url("/src/assets/home-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip: rect(20px);
+}
+
+
+  
+.rightDiv{
+    width: 50%;
+    height:109vh;
+    background-color: #FD5334;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightDiv h1{
+  color: white;
+  font-size: 80px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  margin-left: 10%;
+  margin-top: 20%;
+  position: relative;
+}
+
+.h1span{
+  position: absolute;
+  font-size: 20px;
+  color: #212529;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  line-height: 27px;
+  top: 15%;
+  margin-left: 20px;
+}
+
+button{
+  width: 191px;
+  height: 53px;
+  padding: 13px 24px;
+  background: #212529 url("/src/assets/arrow.png");
+  background-position: 135px ;
+  background-repeat: no-repeat;
+  text-align: left;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  margin-left: 10%;
+  margin-top: 5%;
+  cursor: pointer;
+}
