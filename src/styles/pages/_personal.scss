@@ -1,0 +1,196 @@
+
+.leftDivPersonal{
+    width: 50%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container-personal h1{
+    color: #212529;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 35px;
+    font-size: 26px;
+    margin-top: 30%;
+    margin-left: 15%;
+}
+
+.img-container-personal span{
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 33px;
+    font-size: 24px;
+    color: #E5E6E8;
+    position: absolute;
+    margin-top: 24px;
+}
+
+.img-container-personal{
+
+    height: inherit;
+    background-image: url("/src/assets/personal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rightDivPersonal{
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    
+}
+
+.rightDivPersonal h2{
+    color: #212529;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+
+hr{
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    margin-top: 21px;
+}
+
+.frame-element1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    margin-top: 7%;
+    
+}
+
+.frame-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.short-hr{
+    width: 174px;
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    position: relative;
+    bottom:40px;
+    left: 120px;
+}
+
+.frame-element2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50%;
+    margin-top: 7%;
+}
+
+.h2-div{
+    display: flex;
+    justify-content: center;
+    margin-right:45%;
+    margin-top: -25px;
+    gap:17%;
+}
+
+.h2-div h2{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.h1-div{
+    margin-top: 7%;
+    margin-left: 7%;
+}
+
+.h1-div h1{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 150%;
+    color: black;
+}
+
+.h1-div h3{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #95939A;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+    margin-top: 5%;
+    margin-left: 8%;
+}
+
+input{
+    width: 775px;
+    height: 46px;   
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(197, 188, 188);
+    align-items: center;
+}
+
+.button-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+    gap: 40%;
+    margin-right: 4%;
+}
+
+.back-button{
+    width: 93px;
+    height: 53px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #212529;
+    cursor: pointer;
+}
+
+.next-button{
+    width: 128px;
+    height: 53px;
+    background: #212529 url("/src/assets/arrow.png");
+    border-radius: 8px;
+    color: white;
+    background-position: 70px ;
+    background-repeat: no-repeat;
+    text-align: left;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    cursor: pointer;
+}
+
+.next-button span{
+    position: relative;
+    left: 15px;
+}

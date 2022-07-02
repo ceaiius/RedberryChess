@@ -1,4 +1,4 @@
-.home-container{
+.container{
     display: flex;
 }
   
@@ -8,19 +8,7 @@
     background-color: white;
 }
 
-header{
-  background-color: #7025FB;
-  height: 84px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 10px;
-  padding-left: 60px;
-}
 
-header h1{
-  color: white;
-}
 
 .img-container{
   background-color: white;
@@ -28,7 +16,7 @@ header h1{
   background-image: url("/src/assets/home-image.png");
   background-size: cover;
   background-repeat: no-repeat;
-  clip: rect(20px);
+ 
 }
 
 
@@ -62,7 +50,7 @@ header h1{
   margin-left: 20px;
 }
 
-button{
+.starting-button{
   width: 191px;
   height: 53px;
   padding: 13px 24px;
