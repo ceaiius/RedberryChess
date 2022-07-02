@@ -12,6 +12,7 @@ export default function () {
 
     const handleBlur = (e) => {
         e.currentTarget.type = "text"
+        console.log(e.currentTarget);
     }
 
     const style = {
@@ -58,7 +59,7 @@ export default function () {
                 <h3>This Is Basic Information Fields</h3>
             </div>
             
-            <div>
+            <div className='form-div'>
                 <form>
                     <Input type="text" placeholder="Name *"/>
                     <Input type="email" placeholder="Email adress *"/>

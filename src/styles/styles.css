@@ -1,6 +1,7 @@
 @import url("/src/styles/pages/_home.scss");
 @import url("./pages/_header.scss");
 @import url("/src/styles/pages/_personal.scss");
+@import url("/src/styles/pages/_experience.scss");
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
