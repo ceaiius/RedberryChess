@@ -1,0 +1,33 @@
+.leftDivCompleted{
+    width: 50%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container-completed{
+    height: inherit;
+    background-image: url("/src/assets/complete.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.rightDivCompleted{
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rightDivCompleted h1{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 150%;
+    color: #000000;
+}
