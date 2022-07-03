@@ -1,11 +1,11 @@
-.leftDivCompleted{
+.leftDivCompleted {
     width: 50%;
-    height:100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.img-container-completed{
+.img-container-completed {
     height: inherit;
     background-image: url("/src/assets/complete.png");
     background-size: cover;
@@ -13,7 +13,7 @@
 }
 
 
-.rightDivCompleted{
+.rightDivCompleted {
     width: 50%;
     height: 100vh;
     background-color: white;
@@ -23,7 +23,7 @@
     text-align: center;
 }
 
-.rightDivCompleted h1{
+.rightDivCompleted h1 {
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 800;

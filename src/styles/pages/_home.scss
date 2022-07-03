@@ -1,35 +1,35 @@
-.container{
-    display: flex;
-}
-  
-.leftDiv{
-    width: 50%;
-    height: 100vh;
-    background-color: white;
+.container {
+  display: flex;
 }
 
+.leftDiv {
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+}
 
 
-.img-container{
+
+.img-container {
   background-color: white;
   height: inherit;
   background-image: url("/src/assets/home-image.png");
   background-size: cover;
   background-repeat: no-repeat;
- 
+
 }
 
 
-  
-.rightDiv{
-    width: 50%;
-    height:109vh;
-    background-color: #FD5334;
-    display: flex;
-    flex-direction: column;
+
+.rightDiv {
+  width: 50%;
+  height: 109vh;
+  background-color: #FD5334;
+  display: flex;
+  flex-direction: column;
 }
 
-.rightDiv h1{
+.rightDiv h1 {
   color: white;
   font-size: 80px;
   font-family: 'Nunito', sans-serif;
@@ -39,7 +39,7 @@
   position: relative;
 }
 
-.h1span{
+.h1span {
   position: absolute;
   font-size: 20px;
   color: #212529;
@@ -50,12 +50,12 @@
   margin-left: 20px;
 }
 
-.starting-button{
+.starting-button {
   width: 191px;
   height: 53px;
   padding: 13px 24px;
   background: #212529 url("/src/assets/arrow.png");
-  background-position: 135px ;
+  background-position: 135px;
   background-repeat: no-repeat;
   text-align: left;
   border-radius: 8px;

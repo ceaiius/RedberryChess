@@ -1,11 +1,11 @@
-.leftDivExperience{
+.leftDivExperience {
     width: 50%;
-    height:100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.img-container-experience h1{
+.img-container-experience h1 {
     color: #212529;
     font-family: 'Nunito', sans-serif;
     font-style: italic;
@@ -16,7 +16,7 @@
     margin-left: 15%;
 }
 
-.img-container-experience span{
+.img-container-experience span {
     font-family: 'Nunito', sans-serif;
     font-style: italic;
     font-weight: 500;
@@ -28,7 +28,7 @@
     margin-left: 15%;
 }
 
-.img-container-experience{
+.img-container-experience {
 
     height: inherit;
     background-image: url("/src/assets/experience.png");
@@ -36,14 +36,14 @@
     background-repeat: no-repeat;
 }
 
-.rightDivExperience{
+.rightDivExperience {
     width: 50%;
     height: 100vh;
     background-color: white;
-    
+
 }
 
-.rightDivExperience h2{
+.rightDivExperience h2 {
     color: #212529;
     font-family: 'Open Sans';
     font-style: normal;
@@ -54,24 +54,24 @@
     margin-left: 5%;
 }
 
-hr{
+hr {
     border: 1px solid rgba(185, 180, 196, 0.3);
     margin-top: 21px;
 }
 
-.dropdown-form{
+.dropdown-form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-select{
+select {
     width: 400px;
     height: 46px;
     background: white;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
     border-radius: 4px;
-    padding-left:10px;
+    padding-left: 10px;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
     cursor: pointer;
@@ -85,21 +85,21 @@ select{
     color: #212529;
 }
 
-.radio-input{
+.radio-input {
     width: 20px;
     height: 20px;
 }
 
-.radioDiv{
+.radioDiv {
     display: flex;
     flex-direction: column;
     width: 100%;
     position: relative;
     right: 42px;
-   
+
 }
 
-.radioDiv h2{
+.radioDiv h2 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -108,7 +108,7 @@ select{
     color: #212529;
 }
 
-.radioForm{
+.radioForm {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -121,18 +121,19 @@ select{
     line-height: 150%;
     color: #212529;
 }
-.radioForm label{
+
+.radioForm label {
     position: relative;
     top: 25px;
     left: 40px;
 }
 
-.radioForm input{
+.radioForm input {
     position: relative;
     left: 35px;
 }
 
-.dropdown-div{
+.dropdown-div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -142,6 +143,6 @@ select{
     margin-left: 8%;
 }
 
-.dropdown-form{
+.dropdown-form {
     gap: 30px;
 }

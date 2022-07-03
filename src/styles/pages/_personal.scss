@@ -1,12 +1,11 @@
-
-.leftDivPersonal{
+.leftDivPersonal {
     width: 50%;
-    height:100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.img-container-personal h1{
+.img-container-personal h1 {
     color: #212529;
     font-family: 'Nunito', sans-serif;
     font-style: italic;
@@ -17,7 +16,7 @@
     margin-left: 15%;
 }
 
-.img-container-personal span{
+.img-container-personal span {
     font-family: 'Nunito', sans-serif;
     font-style: italic;
     font-weight: 500;
@@ -28,7 +27,7 @@
     margin-top: 24px;
 }
 
-.img-container-personal{
+.img-container-personal {
 
     height: inherit;
     background-image: url("/src/assets/personal.png");
@@ -36,14 +35,14 @@
     background-repeat: no-repeat;
 }
 
-.rightDivPersonal{
+.rightDivPersonal {
     width: 50%;
     height: 100vh;
     background-color: white;
-    
+
 }
 
-.rightDivPersonal h2{
+.rightDivPersonal h2 {
     color: #212529;
     font-family: 'Open Sans';
     font-style: normal;
@@ -54,34 +53,34 @@
     margin-left: 5%;
 }
 
-hr{
+hr {
     border: 1px solid rgba(185, 180, 196, 0.3);
     margin-top: 21px;
 }
 
-.frame-element1{
+.frame-element1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     margin-top: 7%;
-    
+
 }
 
-.frame-div{
+.frame-div {
     display: flex;
     justify-content: space-around;
 }
 
-.short-hr{
+.short-hr {
     width: 174px;
     border: 1px solid rgba(185, 180, 196, 0.3);
     position: relative;
-    bottom:40px;
+    bottom: 40px;
     left: 120px;
 }
 
-.frame-element2{
+.frame-element2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,15 +88,15 @@ hr{
     margin-top: 7%;
 }
 
-.h2-div{
+.h2-div {
     display: flex;
     justify-content: center;
-    margin-right:45%;
+    margin-right: 45%;
     margin-top: -25px;
-    gap:17%;
+    gap: 17%;
 }
 
-.h2-div h2{
+.h2-div h2 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -105,12 +104,12 @@ hr{
     line-height: 150%;
 }
 
-.h1-div{
+.h1-div {
     margin-top: 7%;
     margin-left: 7%;
 }
 
-.h1-div h1{
+.h1-div h1 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
@@ -119,7 +118,7 @@ hr{
     color: black;
 }
 
-.h1-div h3{
+.h1-div h3 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
@@ -128,7 +127,7 @@ hr{
     color: #95939A;
 }
 
-.form-div{
+.form-div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -138,9 +137,9 @@ hr{
     margin-left: 4%;
 }
 
-input{
+input {
     width: 775px;
-    height: 46px;   
+    height: 46px;
     display: flex;
     justify-content: center;
     padding: 8px 16px;
@@ -150,7 +149,7 @@ input{
     align-items: center;
 }
 
-.button-div{
+.button-div {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -159,7 +158,7 @@ input{
     margin-right: 4%;
 }
 
-.back-button{
+.back-button {
     width: 93px;
     height: 53px;
     background-color: white;
@@ -173,13 +172,13 @@ input{
     cursor: pointer;
 }
 
-.next-button{
+.next-button {
     width: 128px;
     height: 53px;
     background: #212529 url("/src/assets/arrow.png");
     border-radius: 8px;
     color: white;
-    background-position: 70px ;
+    background-position: 70px;
     background-repeat: no-repeat;
     text-align: left;
     font-family: 'Open Sans';
@@ -190,7 +189,7 @@ input{
     cursor: pointer;
 }
 
-.next-button span{
+.next-button span {
     position: relative;
     left: 15px;
 }
