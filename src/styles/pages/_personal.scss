@@ -149,6 +149,11 @@ input {
     align-items: center;
 }
 
+input:hover{
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
 .button-div {
     display: flex;
     justify-content: space-around;
@@ -170,6 +175,13 @@ input {
     line-height: 27px;
     color: #212529;
     cursor: pointer;
+    border: 1px solid #212529;
+}
+
+.back-button:hover{
+    background: rgba(185, 180, 196, 0.3);
+    border: 1px solid rgba(194, 165, 249, 0.8);
+    
 }
 
 .next-button {
@@ -187,6 +199,12 @@ input {
     font-size: 20px;
     line-height: 27px;
     cursor: pointer;
+    border: none;
+}
+
+.next-button:hover{
+    border-radius: 8px;
+    outline: 4px solid rgba(194, 165, 249, 0.8);
 }
 
 .next-button span {

@@ -53,7 +53,7 @@
 .starting-button {
   width: 191px;
   height: 53px;
-  padding: 13px 24px;
+  padding: 10px 27px;
   background: #212529 url("/src/assets/arrow.png");
   background-position: 135px;
   background-repeat: no-repeat;
@@ -68,4 +68,10 @@
   margin-left: 10%;
   margin-top: 5%;
   cursor: pointer;
+  border: none;
+}
+
+.starting-button:hover{
+  border-radius: 8px;
+  outline: 4px solid rgba(194, 165, 249, 0.8);
 }

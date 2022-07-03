@@ -146,3 +146,46 @@ select {
 .dropdown-form {
     gap: 30px;
 }
+
+.back-button-experience{
+    width: 93px;
+    height: 53px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #212529;
+    cursor: pointer;
+    border: 1px solid #212529;
+}
+
+.back-button-experience:hover{
+    border: 1px solid rgb(194, 165, 249);
+
+}
+
+.next-button-experience {
+    width: 99px;
+    height: 53px;
+    background: #212529;
+    border-radius: 8px;
+    color: white;
+    background-position: 70px;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.next-button-experience:hover{
+    border-radius: 8px;
+    outline: 4px solid rgba(194, 165, 249, 0.8);
+}

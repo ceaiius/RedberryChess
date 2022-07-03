@@ -156,9 +156,9 @@ return (
     </div>
 
     <div className='button-div'>
-      <Link style={style} to="/Personal"><button className='back-button'>Back</button></Link>
-      <Link style={style} to="/Completed"><button className='next-button' onClick={onSubmit}><span>Next</span></button>
-      </Link>
+      <Link style={style} to="/Personal"><button className='back-button-experience'>Back</button></Link>
+      <Link style={style} to="/Completed"><button className='next-button-experience' onClick={onSubmit}><span>Done</span></button></Link>
+      
     </div>
 
   </div>
