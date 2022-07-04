@@ -33,33 +33,7 @@ axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
 .then(data=>setState(data.data))
 }
 
-const handlePlayerChange = (e) => {
-if(e.target.value == "Nona Gaphrindashvili"){
-setGrandmaster(1)
-}
-else if(e.target.value == "Mikhail Tal"){
-setGrandmaster(2)
-}
-else if(e.target.value == "Bobby Fisher"){
-setGrandmaster(3)
-}
-else if(e.target.value == "Magnus Carlsen"){
-setGrandmaster(4)
-}
-}
 
-const handleLevelChange = (e) => {
-if(e.target.value == "Beginner"){
-setLevel("beginner")
-}
-else if(e.target.value == "Intermediate"){
-setLevel("normal")
-}
-else if(e.target.value == "Professional"){
-setLevel("professional")
-}
-
-}
 
 useEffect(()=>{
 res();
@@ -125,17 +99,18 @@ return (
 
     <div className='dropdown-div'>
       <form className='dropdown-form'>
-        <select onChange={handleLevelChange} defaultValue={"Default"} onFocus={onFocus} onBlur={onBlur} style={style}>
-          <option value="Default" disabled hidden>level of knowledge</option>
-          <option style={{fontWeight:"bolder"}}>Beginner</option>
-          <option>Intermediate</option>
-          <option>Professional</option>
+        <select value={level} onChange={(e)=>setLevel(e.target.value)} onFocus={onFocus} onBlur={onBlur} style={style}>
+          <option  hidden selected>level of knowledge</option>
+          <option value="beginner" style={{fontWeight:"bolder"}}>Beginner</option>
+          <option value="normal">Intermediate</option>
+          <option value="professional">Professional</option>
         </select>
-        <select onChange={handlePlayerChange} defaultValue={"Default"} onFocus={onFocus} onBlur={onBlur} style={style}>
-          <option value="Default" disabled hidden>Choose your character</option>
+        <select value={grandmaster} onChange={(e)=>setGrandmaster(e.target.value)}  onFocus={onFocus} onBlur={onBlur} style={style}>
+         
           {state.map((data, key)=>{
           return (
-          <option key={key}>{data.name}</option>
+            
+          <option value={data.id}  key={key}>{data.name}</option>
           )
           })}
         </select>
@@ -144,9 +119,9 @@ return (
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
 
-            <Input type="radio" id="yes" name="question" onChange={(e)=>{setQuestion(true)}} className="radio-input"/>
+            <Input value={question} type="radio" id="yes" name="question" onChange={()=>{setQuestion(true)}} className="radio-input"/>
             <label htmlFor="yes">Yes</label>
-            <Input type="radio" id="no" name="question" onChange={(e)=>{setQuestion(false)}} className="radio-input"/>
+            <Input value={question} type="radio" id="no" name="question" onChange={()=>{setQuestion(false)}} className="radio-input"/>
             <label htmlFor="no">No</label>
           </div>
 

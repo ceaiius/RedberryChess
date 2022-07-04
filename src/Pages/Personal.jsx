@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Header from "../components/Header"
 import one from "../assets/1.png"
 import two from "../assets/2.png"
