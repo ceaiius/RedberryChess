@@ -1,0 +1,131 @@
+.card1 {
+    width: 350px;
+    height: 87px;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 205px;
+    right: 80px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 87px;
+    background: rgba(255, 255, 255, 0.85);
+    /* _Components/Toasts/Border */
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* _Components/Toasts/Shadow */
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-top: 5%;
+    margin-left: 50%;
+    position: absolute;
+    top: 205px;
+    right: 80px;
+    z-index: 9;
+    background: #fff
+}
+
+.card3 {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 87px;
+    background: rgba(255, 255, 255, 0.85);
+    /* _Components/Toasts/Border */
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* _Components/Toasts/Shadow */
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-top: 5%;
+    margin-left: 50%;
+    position: absolute;
+    top: 205px;
+    right: 80px;
+    z-index: 9;
+    background: #fff
+}
+
+.card4 {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 87px;
+    background: rgba(255, 255, 255, 0.85);
+    /* _Components/Toasts/Border */
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* _Components/Toasts/Shadow */
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-top: 5%;
+    margin-left: 50%;
+    position: absolute;
+    top: 205px;
+    right: 80px;
+    z-index: 9;
+    background: #fff
+}
+
+.upperDiv {
+    display: flex;
+    justify-content: space-around;
+    gap: 160px;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    height: 50%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #DC3545;
+}
+
+.lowerDiv {
+    height: 50%;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #212529;
+    padding-left: 15px;
+    justify-content: left;
+    align-items: center;
+}
+
+.iconDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.error-hr {
+    width: 350px;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.tickDiv {
+    display: flex;
+    align-items: center;
+
+}
+
+.tick {
+    position: absolute;
+    right: 140px;
+}

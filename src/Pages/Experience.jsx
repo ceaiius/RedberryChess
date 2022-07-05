@@ -68,7 +68,7 @@ return (
   <div className='rightDivExperience'>
     <h2>First step is done, continue to finish onboarding</h2>
     <div>
-      <hr>
+      <hr className='header-hr'>
       </hr>
     </div>
     <div className='frame-div'>
@@ -100,17 +100,17 @@ return (
     <div className='dropdown-div'>
       <form className='dropdown-form'>
         <select value={level} onChange={(e)=>setLevel(e.target.value)} onFocus={onFocus} onBlur={onBlur} style={style}>
-          <option  hidden selected>level of knowledge</option>
           <option value="beginner" style={{fontWeight:"bolder"}}>Beginner</option>
           <option value="normal">Intermediate</option>
           <option value="professional">Professional</option>
         </select>
-        <select value={grandmaster} onChange={(e)=>setGrandmaster(e.target.value)}  onFocus={onFocus} onBlur={onBlur} style={style}>
-         
+        <select value={grandmaster} onChange={(e)=>setGrandmaster(e.target.value)} onFocus={onFocus} onBlur={onBlur}
+          style={style}>
+
           {state.map((data, key)=>{
           return (
-            
-          <option value={data.id}  key={key}>{data.name}</option>
+
+          <option value={data.id} key={key}>{data.name}</option>
           )
           })}
         </select>
@@ -119,9 +119,11 @@ return (
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
 
-            <Input value={question} type="radio" id="yes" name="question" onChange={()=>{setQuestion(true)}} className="radio-input"/>
+            <Input value={question} type="radio" id="yes" name="question" onChange={()=>{setQuestion(true)}}
+            className="radio-input"/>
             <label htmlFor="yes">Yes</label>
-            <Input value={question} type="radio" id="no" name="question" onChange={()=>{setQuestion(false)}} className="radio-input"/>
+            <Input value={question} type="radio" id="no" name="question" onChange={()=>{setQuestion(false)}}
+            className="radio-input"/>
             <label htmlFor="no">No</label>
           </div>
 
@@ -132,8 +134,9 @@ return (
 
     <div className='button-div'>
       <Link style={style} to="/Personal"><button className='back-button-experience'>Back</button></Link>
-      <Link style={style} to="/Completed"><button className='next-button-experience' onClick={onSubmit}><span>Done</span></button></Link>
-      
+      <Link style={style} to="/Completed"><button className='next-button-experience'
+        onClick={onSubmit}><span>Done</span></button></Link>
+
     </div>
 
   </div>

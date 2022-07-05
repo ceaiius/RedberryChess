@@ -54,7 +54,7 @@
     margin-left: 5%;
 }
 
-hr {
+.short-hr {
     border: 1px solid rgba(185, 180, 196, 0.3);
     margin-top: 21px;
 }
@@ -147,7 +147,7 @@ select {
     gap: 30px;
 }
 
-.back-button-experience{
+.back-button-experience {
     width: 93px;
     height: 53px;
     background-color: white;
@@ -162,7 +162,7 @@ select {
     border: 1px solid #212529;
 }
 
-.back-button-experience:hover{
+.back-button-experience:hover {
     border: 1px solid rgb(194, 165, 249);
 
 }
@@ -185,7 +185,7 @@ select {
     text-align: center;
 }
 
-.next-button-experience:hover{
+.next-button-experience:hover {
     border-radius: 8px;
     outline: 4px solid rgba(194, 165, 249, 0.8);
 }
