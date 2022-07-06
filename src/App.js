@@ -8,20 +8,30 @@ import { useState } from "react";
 import { FormContext } from "./components/FormContext";
 function App() {
 
-const [name, setName] = useState("");
-const [email, setEmail] = useState("");
-const [phone, setPhone] = useState("");
-const [birth, setBirth] = useState("");
-const [level, setLevel] = useState("");
-const [grandmaster, setGrandmaster] = useState("");
-const [question , setQuestion] = useState("");
+  const getForm = () => {
+    const storedValues = localStorage.getItem("form");
+    if(!storedValues) return {
+      
+      name: "",
+      email : "",
+      phone: "",
+      date: "",
+      level: "",
+      grandmaster: "",
+      question:""
+      }
+    return JSON.parse(storedValues);
+    
+  }
 
-const [state, setState] = useState([]);
+  const [values, setValues] = useState(getForm)
+
+
+  const [state, setState] = useState([]);
 
 
 return (
-<FormContext.Provider value={{name,setName,email,setEmail,phone,setPhone,birth,setBirth
-    ,level,setLevel,grandmaster,setGrandmaster,question,setQuestion, state, setState}}>
+<FormContext.Provider value={{values,setValues, state, setState}}>
   <Router>
     <Routes>
       <Route path='/' element={<Home />}/>

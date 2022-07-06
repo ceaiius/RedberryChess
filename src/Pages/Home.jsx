@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 export default function Home() {
 
-    const style = {
-        color:"white",
-        textDecoration : "none"
-    }
+const style = {
+  color:"white",
+  textDecoration : "none"
+}
 
   return (
     <div className='container'>

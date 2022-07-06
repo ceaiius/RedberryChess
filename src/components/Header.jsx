@@ -2,6 +2,7 @@ import React from 'react'
 import image from "../assets/crown.svg"
 export default function Header() {
 return (
+  
 <div>
   <header>
     <img src={image} />

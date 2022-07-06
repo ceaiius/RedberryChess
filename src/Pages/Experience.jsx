@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import Header from '../components/Header'
 import one from "../assets/ticked.png"
 import two from "../assets/2.png";
@@ -8,50 +8,60 @@ import axios from 'axios';
 import Input from "../components/Input"
 import { Link } from 'react-router-dom';
 import { FormContext } from '../components/FormContext';
+
 export default function Experience() {
 
-const {state, setState, level, setLevel, grandmaster, setGrandmaster, question, setQuestion
-, name, email, birth, phone} = useContext(FormContext);
-
+const {state, setState,values,setValues} = useContext(FormContext);
 
 
 const onSubmit = () => {
 
 axios.post("https://chess-tournament-api.devtest.ge/api/register",{
-"name": name,
-"email": email,
-"phone": phone,
-"date_of_birth": birth,
-"experience_level": level,
-"already_participated": question,
-"character_id": grandmaster
-}).then(res=>console.log(res));
+  "name": values.name,
+  "email": values.email,
+  "phone": values.phone,
+  "date_of_birth": values.date,
+  "experience_level": values.level,
+  "already_participated": question,
+  "character_id": values.grandmaster
+  }).then(res=>console.log(res));
 }
 
 const res = () =>{
-axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
-.then(data=>setState(data.data))
+  axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
+  .then(data=>setState(data.data))
 }
 
-
+const [question,setQuestion] = useState("");
 
 useEffect(()=>{
-res();
+  res();
 },[])
 
 
 const style = {
-backgroundImage : `url(${arrowdown})`
+  backgroundImage : `url(${arrowdown})`
 }
 
 
 const onFocus = (e) => {
-e.currentTarget.style.backgroundImage = `url(${arrowup})` ;
+  e.currentTarget.style.backgroundImage = `url(${arrowup})` ;
 }
 
 const onBlur = (e) => {
-e.currentTarget.style.backgroundImage = `url(${arrowdown})` ;
+  e.currentTarget.style.backgroundImage = `url(${arrowdown})` ;
 }
+
+const handleChange = (e) => {
+    setValues((previousValues) => ({
+      ...previousValues,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  useEffect(()=>{
+    localStorage.setItem("form", JSON.stringify(values))
+  },[values])
 
 
 
@@ -99,18 +109,20 @@ return (
 
     <div className='dropdown-div'>
       <form className='dropdown-form'>
-        <select value={level} onChange={(e)=>setLevel(e.target.value)} onFocus={onFocus} onBlur={onBlur} style={style}>
+        <select value={values.level} name="level" onChange={handleChange} onFocus={onFocus} onBlur={onBlur} style={style}>
           <option value="beginner" style={{fontWeight:"bolder"}}>Beginner</option>
           <option value="normal">Intermediate</option>
           <option value="professional">Professional</option>
         </select>
-        <select value={grandmaster} onChange={(e)=>setGrandmaster(e.target.value)} onFocus={onFocus} onBlur={onBlur}
+        <select value={values.grandmaster} name="grandmaster" onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
           style={style}>
 
           {state.map((data, key)=>{
           return (
-
+          
           <option value={data.id} key={key}>{data.name}</option>
+          
+         
           )
           })}
         </select>
@@ -119,10 +131,10 @@ return (
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
 
-            <Input value={question} type="radio" id="yes" name="question" onChange={()=>{setQuestion(true)}}
+            <Input value={question} type="radio" id="yes" name="question" onChange={(e)=>setQuestion(true)}
             className="radio-input"/>
             <label htmlFor="yes">Yes</label>
-            <Input value={question} type="radio" id="no" name="question" onChange={()=>{setQuestion(false)}}
+            <Input value={question} type="radio" id="no" name="question" onChange={(e)=>setQuestion(false)}
             className="radio-input"/>
             <label htmlFor="no">No</label>
           </div>
