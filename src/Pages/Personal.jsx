@@ -14,6 +14,9 @@ export default function () {
 const {values,setValues} = useContext(FormContext);
 const [state, setState] = useState(false);
 const [correct, setCorrect] = useState(false);
+const {register, handleSubmit, formState:{errors}} = useForm();
+const navigate = useNavigate();
+
 
 const handleFocus = (e) => {
     e.currentTarget.type = "date"
@@ -25,7 +28,6 @@ const style = {
     color:"white",
     textDecoration : "none"
 }
-const navigate = useNavigate();
 
 const handleClick = () => {
     if(state === true){
@@ -51,7 +53,7 @@ useEffect(()=>{
     localStorage.setItem("form", JSON.stringify(values));
 },[values])
 
-const {register, handleSubmit, formState:{errors}} = useForm();
+
 return (
 <div className='container'>
     <div className='leftDivPersonal'>
@@ -125,7 +127,7 @@ return (
 
 
                 </div>
-                <div className='button-div'>
+                <div className='button-div-personal'>
                     <Link style={style} to="/"><button className='back-button'>Back</button></Link>
                     <button type='submit' onClick={handleClick} className='next-button'><span>Next</span></button>
                 </div>

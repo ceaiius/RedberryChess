@@ -5,13 +5,17 @@ import two from "../assets/2.png";
 import arrowdown from "../assets/arrowdown.svg"
 import arrowup from "../assets/arrowup.svg"
 import axios from 'axios';
-import Input from "../components/Input"
 import { Link } from 'react-router-dom';
 import { FormContext } from '../components/FormContext';
+import {useForm} from "react-hook-form";
+import Card from '../components/Card';
+import {useNavigate} from "react-router-dom";
 export default function Experience() {
 
 const {state, setState,values,setValues} = useContext(FormContext);
-
+const {register, handleSubmit, formState:{errors}} = useForm();
+const navigate = useNavigate();
+const [question,setQuestion] = useState("");
 
 const onSubmit = () => {
 
@@ -21,17 +25,18 @@ axios.post("https://chess-tournament-api.devtest.ge/api/register",{
   "phone": values.phone,
   "date_of_birth": values.date,
   "experience_level": values.level,
-  "already_participated": question,
+  "already_participated": true,
   "character_id": values.grandmaster
   }).then(res=>console.log(res));
+  navigate("/Completed");
 }
 
 const res = () =>{
   axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
-  .then(data=>setState(data.data))
+  .then(data=>setState(data.data))  
 }
 
-const [question,setQuestion] = useState("");
+
 
 useEffect(()=>{
   res();
@@ -52,16 +57,15 @@ const onBlur = (e) => {
 }
 
 const handleChange = (e) => {
-    setValues((previousValues) => ({
-      ...previousValues,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  setValues((previousValues) => ({
+    ...previousValues,
+    [e.target.name]: e.target.value,
+  }))
+}
 
-  useEffect(()=>{
-    localStorage.setItem("form", JSON.stringify(values))
-  },[values])
-
+useEffect(()=>{
+  localStorage.setItem("form", JSON.stringify(values))
+},[values])
 
 
 
@@ -106,50 +110,66 @@ return (
       <h3>This Is Basic Information Fields</h3>
     </div>
 
+    <div className='error-div'>
+      {errors.level &&
+      <Card classname="card1" text="Please choose your level" title="Level" />}
+      {errors.grandmaster &&
+      <Card classname="card2" text="Please choose your character" title="Character" />}
+      {errors.question &&
+      <Card classname="card3" text="Please answer the radio question" title="Answer" />}
+    </div>
+
     <div className='dropdown-div'>
-      <form className='dropdown-form'>
-        <select value={values.level} name="level" onChange={handleChange} onFocus={onFocus} onBlur={onBlur} style={style}>
+
+      <form className='dropdown-form' onSubmit={handleSubmit(onSubmit)}>
+
+        <select value={values.level} name="level" onFocus={onFocus} onBlur={onBlur} style={style} {...register("level",
+          {required:true, onChange:handleChange})}>
+          <option value="" hidden>level of knowledge</option>
           <option value="beginner" style={{fontWeight:"bolder"}}>Beginner</option>
           <option value="normal">Intermediate</option>
           <option value="professional">Professional</option>
         </select>
-        <select value={values.grandmaster} name="grandmaster" onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
-          style={style}>
 
+
+        <select value={values.grandmaster} name="grandmaster" onFocus={onFocus} onBlur={onBlur} style={style}
+          {...register("grandmaster", {required:true, onChange:handleChange})}>
+          <option value="" hidden>Choose your character</option>
           {state.map((data, key)=>{
           return (
-          
           <option value={data.id} key={key}>{data.name}</option>
-          
-         
           )
           })}
         </select>
 
+
         <div className='radioDiv'>
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
+            <div className='radio-div'>
 
-            <Input value={question} type="radio" id="yes" name="question" onChange={(e)=>setQuestion(true)}
-            className="radio-input"/>
-            <label htmlFor="yes">Yes</label>
-            <Input value={question} type="radio" id="no" name="question" onChange={(e)=>setQuestion(false)}
-            className="radio-input"/>
-            <label htmlFor="no">No</label>
+              <label htmlFor="yes">
+                <input value={question} {...register("question", {required:true, onChange:()=>setQuestion(true)})}
+                className="radio-input" type="radio" name="question" id="yes"/>
+                <span>Yes</span>
+              </label>
+
+              <label htmlFor="no">
+                <input value={question} {...register("question", {required:true, onChange:()=>setQuestion(false)})}
+                className="radio-input" type="radio" name="question" value="false" id="no"/>
+                <span>No</span>
+              </label>
+
+            </div>
           </div>
 
         </div>
-
+        <div className='button-div-experience'>
+          <Link style={style} to="/Personal"><button className='back-button-experience'>Back</button></Link>
+          <button type='submit' className='next-button-experience'><span>Done</span></button>
+        </div>
       </form>
     </div>
-
-    <div className='button-div'>
-      <Link style={style} to="/Personal"><button className='back-button-experience'>Back</button></Link>
-      <Link style={style} to="/Completed"><button className='next-button-experience'
-        onClick={onSubmit}><span>Done</span></button></Link>
-
-    </div>
-
   </div>
 </div>
 )

@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useEffect, useContext} from 'react'
 import Header from '../components/Header'
 import rocket from "../assets/rocket.png"
+import { FormContext } from '../components/FormContext';
 
 export default function Completed() {
+  const {values,setValues} = useContext(FormContext);
+  useEffect(()=>{
+    setValues({
+      name: "",
+      email: "",
+      phone: "",
+      birth: "",
+      level: "",
+      grandmaster: "",
+      question: ""
+    })
+  },[])
 return (
 <div className='container'>
   <div className='leftDivCompleted'>
