@@ -1,37 +1,57 @@
+import React, { useContext, useEffect, useState } from 'react';
+import Header from "../components/Header";
+import one from "../assets/1.png";
+import two from "../assets/2.png";
+import { Link } from 'react-router-dom';
+import {FormContext} from "../components/FormContext";
+import { useForm } from 'react-hook-form';
+import Card from "../components/Card";
+import tick from "../assets/correct.png";
+import {useNavigate} from "react-router-dom";
 
-import React, { useContext, useEffect } from 'react'
-import Header from "../components/Header"
-import one from "../assets/1.png"
-import two from "../assets/2.png"
-import Input from '../components/Input'
-import { Link } from 'react-router-dom'
-import {FormContext} from "../components/FormContext"
 export default function () {
-const {values,setValues} = useContext(FormContext)
+
+const {values,setValues} = useContext(FormContext);
+const [state, setState] = useState(false);
+const [correct, setCorrect] = useState(false);
+
 const handleFocus = (e) => {
-e.currentTarget.type = "date"
+    e.currentTarget.type = "date"
 }
 const handleBlur = (e) => {
-e.currentTarget.type = "text"
+    e.currentTarget.type = "text"
 }
 const style = {
-color:"white",
-textDecoration : "none"
+    color:"white",
+    textDecoration : "none"
+}
+const navigate = useNavigate();
+
+const handleClick = () => {
+    if(state === true){
+        navigate("/Experience");
+    }
+}
+
+const onSubmit = (data) => {
+    if(data.name.length >= 2 && data.email.includes("redberry.ge")){
+        setState(true);
+        setCorrect(true);
+    }
 }
 
 const handleChange = (e) => {
     setValues((previousValues) => ({
-      ...previousValues,
-      [e.target.name]: e.target.value,
+        ...previousValues,
+        [e.target.name]: e.target.value,
     }))
-  }
+}
 
-  useEffect(()=>{
-    localStorage.setItem("form", JSON.stringify(values))
-  },[values])
+useEffect(()=>{
+    localStorage.setItem("form", JSON.stringify(values));
+},[values])
 
-  
-
+const {register, handleSubmit, formState:{errors}} = useForm();
 return (
 <div className='container'>
     <div className='leftDivPersonal'>
@@ -44,7 +64,7 @@ return (
     <div className='rightDivPersonal'>
         <h2>Start Creating Your Account</h2>
         <div>
-            <hr>
+            <hr className='header-hr'>
             </hr>
         </div>
         <div className='frame-div'>
@@ -66,19 +86,52 @@ return (
             <h3>This Is Basic Information Fields</h3>
         </div>
         <div className='form-div'>
-            <form>
-                <Input value={values.name} name="name" onChange={handleChange} type="text" placeholder="Name *"/>
-                <Input value={values.email} name="email" onChange={handleChange} type="email" placeholder="Email adress
-                *"/>
-                <Input value={values.phone} name="phone" onChange={handleChange} type="tel" placeholder="Phone number *"/>
-                <Input value={values.date} name="date" onChange={handleChange} type="text" placeholder="Date of birth *"
-                onFocus={handleFocus} onBlur={handleBlur} />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                {errors.name &&
+                <Card classname="card1" text="Please enter a valid name" title="Name" />}
+                {errors.email &&
+                <Card classname="card2" text="Please enter a valid email adress" title="Email" />}
+                {errors.phone &&
+                <Card classname="card3" text="Please enter a valid phone number" title="Phone" />}
+                {errors.date &&
+                <Card classname="card4" text="Please enter a valid birth date" title="Date" />}
+                <div className='form-div'>
+
+
+                    <div className='tickDiv'>
+                        <input value={values.name} name="name" type="text" placeholder="Name*"
+                            {...register("name",{onChange:handleChange, required:true, minLength:2})} />
+                        {correct? <img className='tick' src={tick} /> : null}
+                    </div>
+
+                    <div className='tickDiv'>
+                        <input value={values.email} name="email" type="email" placeholder="Email adress
+                        *" {...register("email",{onChange:handleChange, required:true, pattern:/.+@redberry.ge/})}/>
+                            {correct? <img className='tick' src={tick} /> : null}
+                    </div>
+
+                    <div className='tickDiv'>
+                        <input value={values.phone} name="phone" type="tel" placeholder="Phone number *"
+                            {...register("phone",{onChange:handleChange, required:true, pattern:/[0-9]{9}/})}/>
+                            {correct? <img className='tick' src={tick} /> : null}
+                    </div>
+
+                    <div className='tickDiv'>
+                        <input value={values.date} name="date" type="text" placeholder="Date of birth *"
+                            onFocus={handleFocus} onBlur={handleBlur} {...register("date",{onChange:handleChange,
+                            required:true})} />
+                        {correct? <img className='tick' src={tick} /> : null}
+                    </div>
+
+
+                </div>
+                <div className='button-div'>
+                    <Link style={style} to="/"><button className='back-button'>Back</button></Link>
+                    <button type='submit' onClick={handleClick} className='next-button'><span>Next</span></button>
+                </div>
             </form>
         </div>
-        <div className='button-div'>
-            <Link style={style} to="/"><button className='back-button'>Back</button></Link>
-            <Link style={style} to="/Experience"><button className='next-button'><span>Next</span></button></Link>
-        </div>
+
     </div>
 </div>
 )
