@@ -4,7 +4,7 @@ import rocket from "../assets/rocket.png"
 import { FormContext } from '../components/FormContext';
 
 export default function Completed() {
-  const {values,setValues} = useContext(FormContext);
+  const {setValues} = useContext(FormContext);
   useEffect(()=>{
     setValues({
       name: "",

@@ -29,6 +29,11 @@ const style = {
     textDecoration : "none"
 }
 
+const errorStyle = {
+    backgroundColor: "#FFEFEF",
+    color: "#DC3545"
+}
+
 const handleClick = () => {
     if(state === true){
         navigate("/Experience");
@@ -89,8 +94,10 @@ return (
         </div>
         <div className='form-div'>
             <form onSubmit={handleSubmit(onSubmit)}>
+            
                 {errors.name &&
-                <Card classname="card1" text="Please enter a valid name" title="Name" />}
+                <Card classname="card1" text="Please enter a valid name" title="Name" />} 
+                
                 {errors.email &&
                 <Card classname="card2" text="Please enter a valid email adress" title="Email" />}
                 {errors.phone &&
@@ -101,25 +108,25 @@ return (
 
 
                     <div className='tickDiv'>
-                        <input value={values.name} name="name" type="text" placeholder="Name*"
+                        <input style={{backgroundColor: errors["name"] ? "#FFEFEF" : null, color: errors["name"] ? "#DC3545" : null}}  value={values.name} name="name" type="text" placeholder="Name *"
                             {...register("name",{onChange:handleChange, required:true, minLength:2})} />
                         {correct? <img className='tick' src={tick} /> : null}
                     </div>
 
                     <div className='tickDiv'>
-                        <input value={values.email} name="email" type="email" placeholder="Email adress
+                        <input style={{backgroundColor: errors["email"] ? "#FFEFEF" : null, color: errors["email"] ? "#DC3545" : null}} value={values.email} name="email" type="email" placeholder="Email adress
                         *" {...register("email",{onChange:handleChange, required:true, pattern:/.+@redberry.ge/})}/>
                             {correct? <img className='tick' src={tick} /> : null}
                     </div>
 
                     <div className='tickDiv'>
-                        <input value={values.phone} name="phone" type="tel" placeholder="Phone number *"
+                        <input style={{backgroundColor: errors["phone"] ? "#FFEFEF" : null, color: errors["phone"] ? "#DC3545" : null}} value={values.phone} name="phone" type="tel" placeholder="Phone number *"
                             {...register("phone",{onChange:handleChange, required:true, pattern:/[0-9]{9}/})}/>
                             {correct? <img className='tick' src={tick} /> : null}
                     </div>
 
                     <div className='tickDiv'>
-                        <input value={values.date} name="date" type="text" placeholder="Date of birth *"
+                        <input style={{backgroundColor: errors["date"] ? "#FFEFEF" : null, color: errors["date"] ? "#DC3545" : null}} value={values.date} name="date" type="text" placeholder="Date of birth *"
                             onFocus={handleFocus} onBlur={handleBlur} {...register("date",{onChange:handleChange,
                             required:true})} />
                         {correct? <img className='tick' src={tick} /> : null}
@@ -128,7 +135,7 @@ return (
 
                 </div>
                 <div className='button-div-personal'>
-                    <Link style={style} to="/"><button className='back-button'>Back</button></Link>
+                    <Link  to="/"><button className='back-button'>Back</button></Link>
                     <button type='submit' onClick={handleClick} className='next-button'><span>Next</span></button>
                 </div>
             </form>

@@ -25,7 +25,7 @@ axios.post("https://chess-tournament-api.devtest.ge/api/register",{
   "phone": values.phone,
   "date_of_birth": values.date,
   "experience_level": values.level,
-  "already_participated": true,
+  "already_participated": question,
   "character_id": values.grandmaster
   }).then(res=>console.log(res));
   navigate("/Completed");
@@ -35,18 +35,6 @@ const res = () =>{
   axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
   .then(data=>setState(data.data))  
 }
-
-
-
-useEffect(()=>{
-  res();
-},[])
-
-
-const style = {
-  backgroundImage : `url(${arrowdown})`
-}
-
 
 const onFocus = (e) => {
   e.currentTarget.style.backgroundImage = `url(${arrowup})` ;
@@ -64,7 +52,8 @@ const handleChange = (e) => {
 }
 
 useEffect(()=>{
-  localStorage.setItem("form", JSON.stringify(values))
+  localStorage.setItem("form", JSON.stringify(values));
+  res();
 },[values])
 
 
@@ -123,7 +112,8 @@ return (
 
       <form className='dropdown-form' onSubmit={handleSubmit(onSubmit)}>
 
-        <select value={values.level} name="level" onFocus={onFocus} onBlur={onBlur} style={style} {...register("level",
+        <select value={values.level} name="level" onFocus={onFocus} onBlur={onBlur} style={{backgroundImage : `url(${arrowdown})`,backgroundColor:errors["level"] ? "#FFEFEF" : null, color: errors["level"] ? "#DC3545" : null}}
+          {...register("level",
           {required:true, onChange:handleChange})}>
           <option value="" hidden>level of knowledge</option>
           <option value="beginner" style={{fontWeight:"bolder"}}>Beginner</option>
@@ -132,7 +122,7 @@ return (
         </select>
 
 
-        <select value={values.grandmaster} name="grandmaster" onFocus={onFocus} onBlur={onBlur} style={style}
+        <select value={values.grandmaster} name="grandmaster" onFocus={onFocus} onBlur={onBlur} style={{backgroundImage : `url(${arrowdown})`,backgroundColor:errors["grandmaster"] ? "#FFEFEF" : null, color: errors["grandmaster"] ? "#DC3545" : null}}
           {...register("grandmaster", {required:true, onChange:handleChange})}>
           <option value="" hidden>Choose your character</option>
           {state.map((data, key)=>{
@@ -149,14 +139,14 @@ return (
             <div className='radio-div'>
 
               <label htmlFor="yes">
-                <input value={question} {...register("question", {required:true, onChange:()=>setQuestion(true)})}
+                <input value={question}  {...register("question", {required:true, onChange:()=>setQuestion(true)})}
                 className="radio-input" type="radio" name="question" id="yes"/>
                 <span>Yes</span>
               </label>
 
               <label htmlFor="no">
                 <input value={question} {...register("question", {required:true, onChange:()=>setQuestion(false)})}
-                className="radio-input" type="radio" name="question" value="false" id="no"/>
+                className="radio-input" type="radio" name="question" id="no"/>
                 <span>No</span>
               </label>
 
@@ -165,7 +155,7 @@ return (
 
         </div>
         <div className='button-div-experience'>
-          <Link style={style} to="/Personal"><button className='back-button-experience'>Back</button></Link>
+          <Link  to="/Personal"><button className='back-button-experience'>Back</button></Link>
           <button type='submit' className='next-button-experience'><span>Done</span></button>
         </div>
       </form>
