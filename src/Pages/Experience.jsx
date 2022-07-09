@@ -10,6 +10,7 @@ import { FormContext } from '../components/FormContext';
 import {useForm} from "react-hook-form";
 import Card from '../components/Card';
 import {useNavigate} from "react-router-dom";
+import {motion} from "framer-motion"
 export default function Experience() {
 
 const {state, setState,values,setValues} = useContext(FormContext);
@@ -30,6 +31,7 @@ axios.post("https://chess-tournament-api.devtest.ge/api/register",{
   }).then(res=>console.log(res));
   navigate("/Completed");
 }
+
 
 const res = () =>{
   axios.get("https://chess-tournament-api.devtest.ge/api/grandmasters")
@@ -59,7 +61,7 @@ useEffect(()=>{
 
 
 return (
-<div className='container'>
+<motion.div className='container'  initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}>
   <div className='leftDivExperience'>
     <Header />
     <div className='img-container-experience'>
@@ -161,6 +163,6 @@ return (
       </form>
     </div>
   </div>
-</div>
+</motion.div>
 )
 }

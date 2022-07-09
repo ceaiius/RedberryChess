@@ -1,9 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./styles/styles.css"
-import Home from './Pages/Home';
-import Personal from "./Pages/Personal";
-import Experience from "./Pages/Experience";
-import Completed from "./Pages/Completed";
+import Animated from "./components/Animated";
 import { useState } from "react";
 import { FormContext } from "./components/FormContext";
 function App() {
@@ -32,12 +29,7 @@ function App() {
 return (
 <FormContext.Provider value={{values,setValues, state, setState}}>
   <Router>
-    <Routes>
-      <Route path='/' element={<Home />}/>
-      <Route path='/Personal' element={<Personal />}/>
-      <Route path='/Experience' element={<Experience />}/>
-      <Route path='/Completed' element={<Completed />}/>
-    </Routes>
+    <Animated/>
   </Router>
 </FormContext.Provider>
 );

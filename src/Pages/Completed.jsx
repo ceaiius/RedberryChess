@@ -2,6 +2,7 @@ import React, { useEffect, useContext} from 'react'
 import Header from '../components/Header'
 import rocket from "../assets/rocket.png"
 import { FormContext } from '../components/FormContext';
+import {motion} from "framer-motion"
 
 export default function Completed() {
   const {setValues} = useContext(FormContext);
@@ -12,12 +13,11 @@ export default function Completed() {
       phone: "",
       birth: "",
       level: "",
-      grandmaster: "",
-      question: ""
+      grandmaster: ""
     })
   },[])
 return (
-<div className='container'>
+<motion.div className='container' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}>
   <div className='leftDivCompleted'>
     <Header />
     <div className='img-container-completed'>
@@ -30,6 +30,6 @@ return (
       <h1>Onboarding completed!</h1>
     </div>
   </div>
-</div>
+</motion.div>
 )
 }

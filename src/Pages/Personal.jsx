@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import Card from "../components/Card";
 import tick from "../assets/correct.png";
 import {useNavigate} from "react-router-dom";
+import {motion} from "framer-motion"
 
 export default function () {
 
@@ -60,7 +61,7 @@ useEffect(()=>{
 
 
 return (
-<div className='container'>
+<motion.div className='container' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}>
     <div className='leftDivPersonal'>
         <Header />
         <div className='img-container-personal'>
@@ -142,6 +143,6 @@ return (
         </div>
 
     </div>
-</div>
+</motion.div>
 )
 }
