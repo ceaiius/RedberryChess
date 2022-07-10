@@ -1,9 +1,11 @@
 import React from 'react'
 import error from "../assets/Vector.png"
 import other from "../assets/Vector2.png"
+import { motion } from 'framer-motion'
 export default function Card({text, classname, title}) {
+
 return (
-<div>
+<motion.div initial={{opacity:0}} animate={{opacity:1}}  transition={{delay:0.2, duration:0.5}}>
     <div className={classname}>
         <div className='upperDiv'>
             <div className='iconDiv'>
@@ -21,6 +23,6 @@ return (
             <p>{text}</p>
         </div>
     </div>
-</div>
+</motion.div>
 )
 }

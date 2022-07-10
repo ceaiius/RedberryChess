@@ -19,14 +19,14 @@ const navigate = useNavigate();
 
 
 const onSubmit = (formValue) => {
-const question = formValue.question === "true" ? true : false;
+values.question = formValue.question === "true" ? true : false;
 axios.post("https://chess-tournament-api.devtest.ge/api/register",{
   "name": values.name,
   "email": values.email,
   "phone": values.phone,
   "date_of_birth": values.date,
   "experience_level": values.level,
-  "already_participated": question,
+  "already_participated": values.question,
   "character_id": values.grandmaster
   }).then(res=>console.log(res));
   navigate("/Completed");

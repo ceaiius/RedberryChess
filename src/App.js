@@ -14,6 +14,7 @@ const getForm = () => {
     date: "",
     level: "",
     grandmaster: "",
+    question:""
   }
   return JSON.parse(storedValues);
     
