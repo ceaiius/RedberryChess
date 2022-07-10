@@ -25,15 +25,7 @@ const handleFocus = (e) => {
 const handleBlur = (e) => {
     e.currentTarget.type = "text"
 }
-const style = {
-    color:"white",
-    textDecoration : "none"
-}
 
-const errorStyle = {
-    backgroundColor: "#FFEFEF",
-    color: "#DC3545"
-}
 
 const handleClick = () => {
     if(state === true){
@@ -65,8 +57,8 @@ return (
     <div className='leftDivPersonal'>
         <Header />
         <div className='img-container-personal'>
-            <h1>"WHEN YOU SEE A GOOD MOVE, <br></br>LOOK FOR A BETTER ONE."
-                <br></br> <span>-EMANUEL LASKER</span></h1>
+            <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1, duration:1.5}}>"WHEN YOU SEE A GOOD MOVE, <br></br>LOOK FOR A BETTER ONE."
+                <br></br> <span>-EMANUEL LASKER</span></motion.h1>
         </div>
     </div>
     <div className='rightDivPersonal'>

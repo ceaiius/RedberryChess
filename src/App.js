@@ -5,25 +5,24 @@ import { useState } from "react";
 import { FormContext } from "./components/FormContext";
 function App() {
 
-  const getForm = () => {
-    const storedValues = localStorage.getItem("form");
-    if(!storedValues) return {
-      
-      name: "",
-      email : "",
-      phone: "",
-      date: "",
-      level: "",
-      grandmaster: "",
-      }
-    return JSON.parse(storedValues);
-    
+const getForm = () => {
+  const storedValues = localStorage.getItem("form");
+  if(!storedValues) return {   
+    name: "",
+    email : "",
+    phone: "",
+    date: "",
+    level: "",
+    grandmaster: "",
   }
+  return JSON.parse(storedValues);
+    
+}
 
-  const [values, setValues] = useState(getForm)
+const [values, setValues] = useState(getForm)
 
 
-  const [state, setState] = useState([]);
+const [state, setState] = useState([]);
 
 
 return (

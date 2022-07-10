@@ -29,7 +29,6 @@
 }
 
 .img-container-experience {
-
     height: inherit;
     background-image: url("/src/assets/experience.png");
     background-size: cover;
@@ -40,7 +39,6 @@
     width: 50%;
     height: 100vh;
     background-color: white;
-
 }
 
 .rightDivExperience h2 {
@@ -122,8 +120,6 @@ select {
     color: #212529;
 }
 
-
-
 .radioForm input {
     position: relative;
     left: 35px;
@@ -187,14 +183,14 @@ select {
     outline: 4px solid rgba(194, 165, 249, 0.8);
 }
 
-.button-div-experience{
+.button-div-experience {
     display: grid;
     grid-auto-flow: column;
     gap: 309%;
     margin-left: 3%;
 }
 
-.radio-div{
+.radio-div {
     display: grid;
     margin-top: 5%;
     gap: 100%;
@@ -202,7 +198,7 @@ select {
     margin-left: 5%;
 }
 
-.radio-div span{
+.radio-div span {
     position: relative;
     bottom: 22px;
     left: 60px;

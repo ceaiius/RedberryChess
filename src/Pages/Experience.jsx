@@ -65,8 +65,8 @@ return (
   <div className='leftDivExperience'>
     <Header />
     <div className='img-container-experience'>
-      <h1>"MANY HAVE BECOME CHESS MASTERS;" <br></br>NO ONE HAS BECOME THE MASTER OF CHESS."
-        <br></br> <span>- SIEGBERT TARRASCH</span></h1>
+      <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1, duration:1.5}}>"MANY HAVE BECOME CHESS MASTERS;" <br></br>NO ONE HAS BECOME THE MASTER OF CHESS."
+        <br></br> <span>- SIEGBERT TARRASCH</span></motion.h1>
     </div>
   </div>
   <div className='rightDivExperience'>
