@@ -138,17 +138,17 @@ return (
         <div className='radioDiv'>
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
-            <div className='radio-div'>
+            <div className='radio-div' onChange={(e)=>setQuestion(e.target.value === "true" ? true : false)}>
 
               <label htmlFor="yes">
-                <input value={question}  {...register("question", {required:true, onChange:()=>setQuestion(true)})}
+                <input value="true" {...register("question", {required:true})}
                 className="radio-input" type="radio" name="question" id="yes"/>
                 <span>Yes</span>
               </label>
 
               <label htmlFor="no">
-                <input value={question} {...register("question", {required:true, onChange:()=>setQuestion(false)})}
-                className="radio-input" type="radio" name="question" id="no"/>
+                <input value="false" {...register("question", {required:true})}
+                className="radio-input" type="radio" id="no"/>
                 <span>No</span>
               </label>
 

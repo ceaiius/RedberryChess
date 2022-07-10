@@ -90,7 +90,6 @@ return (
             
                 {errors.name &&
                 <Card classname="card1" text="Please enter a valid name" title="Name" />} 
-                
                 {errors.email &&
                 <Card classname="card2" text="Please enter a valid email adress" title="Email" />}
                 {errors.phone &&
