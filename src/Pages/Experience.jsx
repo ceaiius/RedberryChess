@@ -16,10 +16,10 @@ export default function Experience() {
 const {state, setState,values,setValues} = useContext(FormContext);
 const {register, handleSubmit, formState:{errors}} = useForm();
 const navigate = useNavigate();
-const [question,setQuestion] = useState("");
 
-const onSubmit = () => {
 
+const onSubmit = (formValue) => {
+const question = formValue.question === "true" ? true : false;
 axios.post("https://chess-tournament-api.devtest.ge/api/register",{
   "name": values.name,
   "email": values.email,
@@ -138,7 +138,7 @@ return (
         <div className='radioDiv'>
           <h2>Have you participated in the Redberry Championship? *</h2>
           <div className='radioForm'>
-            <div className='radio-div' onChange={(e)=>setQuestion(e.target.value === "true" ? true : false)}>
+            <div className='radio-div'>
 
               <label htmlFor="yes">
                 <input value="true" {...register("question", {required:true})}
